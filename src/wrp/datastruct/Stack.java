@@ -1,5 +1,6 @@
+package wrp.datastruct;
 
-public class Test {
+public class Stack {
 
 	/**
 	 * @param args
