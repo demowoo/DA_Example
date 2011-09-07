@@ -7,31 +7,39 @@ public class BubbleSort {
 	/**
 	 * @param args
 	 */
-	public static int temp;
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int[] intArr = new int[50];
+		int[] intArr = new int[10];
 		Random random = new Random(100);
-		for(int i=0; i<50; i++){
+		for(int i=0; i<10; i++){
 			intArr[i] = random.nextInt(300);
 		}
 		
-//		for(int i=0; i<50; i++){
-//			xswap(intArr, i);
-//		}
+		System.out.print("排序前：");
+		printarr(intArr);
 		
-		int[] testarr = {23, 24};
-		xswap(testarr, 0);
-		System.out.println(testarr[0]+":"+ testarr[1]);
+		System.out.println();
+		for(int j=intArr.length-1; j>0; j--)
+			for(int i=0; i < j; i++){
+				swap(intArr, i);
+			}
+		
+		System.out.print("排序后：");
+		printarr(intArr);
 	}
 	
-	public static void xswap(int[] intArr, int i){
+	public static void swap(int[] intArr, int i){
 		if(intArr[i] > intArr[i+1]){
-			temp = intArr[i];
+			int temp = intArr[i];
 			intArr[i] = intArr[i+1];
 			intArr[i+1] = temp;
+		}
+	}
+	
+	public static void printarr(int[] intarr){
+		for(int i=0; i<intarr.length; i++){
+			System.out.print(intarr[i]+",");
 		}
 	}
 }
